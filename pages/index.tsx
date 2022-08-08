@@ -4,11 +4,6 @@ import { AnimatePresence, motion, useIsPresent } from "framer-motion";
 let x = 3;
 export default function () {
   const [items, setItems] = useState([1, 2, 3]);
-  const [toggle, setToggle] = useState(false);
-
-  useEffect(() => {
-    window.toggle = () => setToggle((toggle) => !toggle);
-  }, []);
 
   function addItem() {
     x++;
@@ -27,7 +22,7 @@ export default function () {
         </button>
       </div>
 
-      {/* <table cellPadding={0} className="mt-8 w-full">
+      <table cellPadding={0} className="mt-8 w-full">
         <thead>
           <tr>
             <th>Col 1</th>
@@ -42,8 +37,8 @@ export default function () {
             ))}
           </AnimatePresence>
         </tbody>
-      </table> */}
-      <ul className="mt-8 border rounded p-8 overflow-hidden">
+      </table>
+      {/* <ul className="mt-8 border rounded p-8 overflow-hidden">
         <AnimatePresence initial={false}>
           {items.map((item) => (
             <motion.li
@@ -69,7 +64,7 @@ export default function () {
           ))}
         </AnimatePresence>
       </ul>
-      {/* <div className="mt-8">
+      <div className="mt-8">
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt,
           cum in laudantium atque est eligendi laboriosam assumenda, officia
@@ -81,7 +76,7 @@ export default function () {
   );
 }
 
-function TR({ item, removeItem }) {
+function TR({ item, removeItem }: any) {
   let isPresent = useIsPresent();
 
   return (
